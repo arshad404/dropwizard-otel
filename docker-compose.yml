@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:1.44
+    container_name: jaeger
+    ports:
+      - "5775:5775"  # Zipkin Thrift
+      - "6831:6831/udp"  # Jaeger agent (UDP)
+      - "6832:6832/udp"  # Jaeger agent (UDP)
+      - "5778:5778"  # Jaeger HTTP for agent
+      - "14250:14250"  # Jaeger gRPC
+      - "14268:14268"  # Jaeger HTTP for collector
+      - "14250:14250"  # Jaeger gRPC
+      - "16686:16686"  # Jaeger UI
+      - "5778:5778"  # Jaeger query service (used by metrics)
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_HTTP_PORT=9411

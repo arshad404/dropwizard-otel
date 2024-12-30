@@ -1,0 +1,5 @@
+com/mycompany/helloworld/HelloWorldApplication.class
+com/mycompany/helloworld/api/HelloWorld.class
+com/mycompany/helloworld/health/ConfigHealthCheck.class
+com/mycompany/helloworld/resources/HelloWorldResource.class
+com/mycompany/helloworld/HelloWorldConfiguration.class
